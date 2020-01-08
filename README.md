@@ -1,3 +1,59 @@
+# IMPORTANT NOTE:
+It's a package forked from [https://github.com/kensnyder/quill-image-resize-module/blob/master/demo/index.html](https://github.com/kensnyder/quill-image-resize-module/blob/master/demo/index.html),
+with just a bit of fixes:
+1. import Parchment from node_modules (instead of directly from window.Quill.imports)
+
+~~const Parchment = window.Quill.imports.parchment;~~
+
+to
+```
+import Parchment from 'parchment'
+```
+
+This solved the error:
+```
+"Cannot read property 'imports' of undefined"
+```
+
+2. Edit some mistake in document
+
+~~imageResize: { // See optional "config" below }~~
+
+to
+```
+imageResize: {
+    // See optional "config" below
+}
+```
+
+# 重要訊息:
+這個package原作者為[https://github.com/kensnyder/quill-image-resize-module/blob/master/demo/index.html](https://github.com/kensnyder/quill-image-resize-module/blob/master/demo/index.html)
+我只修改了幾個部分：
+1. 修正了Parchment的引入方式，改為直接由node_modules引入
+
+~~const Parchment = window.Quill.imports.parchment;~~
+
+改為
+```
+import Parchment from 'parchment'
+```
+
+這解決了原套件發生的如下錯誤：
+```
+"Cannot read property 'imports' of undefined"
+```
+
+2. 修正了一些document裡面的勘誤
+
+~~imageResize: { // See optional "config" below }~~
+
+改為
+```
+imageResize: {
+    // See optional "config" below
+}
+```
+
 # Quill ImageResize Module
 
 A module for Quill rich text editor to allow images to be resized.
@@ -43,7 +99,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        ImageResize: {
+        imageResize: {
             // See optional "config" below
         }
     }
@@ -58,7 +114,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        ImageResize: {}
+        imageResize: {}
     }
 });
 ```
@@ -71,7 +127,7 @@ const quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        ImageResize: {
+        imageResize: {
             modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
         }
     }
@@ -91,7 +147,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        ImageResize: {
+        imageResize: {
             // ...
             handleStyles: {
                 backgroundColor: 'black',
@@ -115,7 +171,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        ImageResize: {
+        imageResize: {
             // ...
             displayStyles: {
                 backgroundColor: 'black',
@@ -139,7 +195,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        ImageResize: {
+        imageResize: {
             // ...
             toolbarStyles: {
                 backgroundColor: 'black',
@@ -176,7 +232,7 @@ var quill = new Quill(editor, {
     // ...
     modules: {
         // ...
-        ImageResize: {
+        imageResize: {
             modules: [ MyModule, Resize ],
             // ...
         }
